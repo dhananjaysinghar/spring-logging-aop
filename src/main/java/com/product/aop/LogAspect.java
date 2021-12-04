@@ -43,6 +43,7 @@ public class LogAspect {
             classLogger.debug("LogAspect : {}", LogMessage.builder()
                     .className(className)
                     .methodName(methodName)
+                    .methodArgs(Stream.of(joinPoint.getArgs()).collect(Collectors.toList()).toString())
                     .elapsedTimeInMillis(TimeUnit.NANOSECONDS.toMillis(elapsedTime))
                     .elapsedTimeInMicros(TimeUnit.NANOSECONDS.toMicros(elapsedTime))
                     .result(result)
