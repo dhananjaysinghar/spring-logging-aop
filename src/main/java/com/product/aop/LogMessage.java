@@ -12,6 +12,7 @@ import lombok.*;
 public class LogMessage {
     private String className;
     private String methodName;
+    private String methodArgs;
     private Long elapsedTimeInMillis;
     private Long elapsedTimeInMicros;
     private Object result;
@@ -22,6 +23,7 @@ public class LogMessage {
         return "{" +
                 "className='" + className + '\'' +
                 ", methodName='" + methodName + '\'' +
+                ", methodArgs='" + methodArgs + '\'' +
                 ", elapsedTimeInMillis=" + elapsedTimeInMillis +
                 ", elapsedTimeInMicros=" + elapsedTimeInMicros +
                 ", result=" + new ObjectMapper().writeValueAsString(result) +
